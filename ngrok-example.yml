@@ -1,0 +1,7 @@
+version: 2
+authtoken: Your-auth-token-example
+tunnels:
+  first:
+    addr: app:5173
+    proto: http
+    hostname: Your-domain-example
