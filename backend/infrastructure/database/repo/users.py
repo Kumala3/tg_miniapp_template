@@ -1,6 +1,6 @@
 from typing import Optional
 
-from sqlalchemy import select
+# from sqlalchemy import select
 from sqlalchemy.dialects.postgresql import insert
 
 from infrastructure.database.models import User
