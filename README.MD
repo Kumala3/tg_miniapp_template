@@ -1,24 +1,25 @@
-Цей темплейт використовується для розробки Telegram ботів з використанням бібліотеки [`aiogram v3.0+`](https://github.com/aiogram/aiogram/tree/dev-3.x).
+This template is used for development Telegram bots on [`aiogram v3.0+`](https://github.com/aiogram/aiogram/tree/dev-3.x) + MiniApp on [`React`](https://github.com/facebook/react) & [`TypeScript`](https://github.com/microsoft/typescript)
 
-## SQLAlchemy + Alembic
+<!-- ## SQLAlchemy + Alembic
 В коді є приклади таблички User з використанням SQLAlchemy 2.0, та скрипти для алембіку (ініціалізація алембік, створення та застосування міграцій).
 
 Але, якщо ви з цими інструментами ніколи не працювали, то зверніться до документації і дізнайтесь про ці інструменти. 
-Також, в мене є англомовний [курс по цим інструментам на Udemy](https://www.udemy.com/course/sqlalchemy-alembic-bootcamp/?referralCode=E9099C5B5109EB747126).
+Також, в мене є англомовний [курс по цим інструментам на Udemy](https://www.udemy.com/course/sqlalchemy-alembic-bootcamp/?referralCode=E9099C5B5109EB747126). -->
 
-![img.png](https://img-c.udemycdn.com/course/240x135/5320614_a8af_2.jpg)
+## To start using it:
+1. Register the account on ngrok(if you haven't yet): [Sign Up Ngrok](https://dashboard.ngrok.com/signup)
+2. Create `ngrok.yml` by data from ngrok-example.yml and fill out required data: `authtoken` and `domain`.
+3. Create `.env` by data from `.end.dist` and fill out required data.
+4. **Run with Docker:**
+    1. Download and install `Docker desktop` (if you haven't yet): [Download Docker Desktop](https://docs.docker.com/get-docker/).
+    2. Run project with next command in terminal:  
+        `docker-compose up --build`
 
-### Для того, щоб почати використовувати:
-1. Скопіюйте `.env.dist` в `.env` і заповніть необхідні дані.
+<!-- 1. Скопіюйте `.env.dist` в `.env` і заповніть необхідні дані.
 2. Створіть нові хендлери.
 3. **Docker:**
    1. Можете одразу запускати проєкт із Docker, а якщо в вас його немає, то [завантажте, та встановіть](https://docs.docker.com/get-docker/).
-   2. Запустіть проєкт з команди `docker-compose up`
-4. **Без Docker:**
-   1. Створіть [venv](https://docs.python.org/3/library/venv.html)
-   2. Встановить залежності із requirements.txt: `pip install -r requirements.txt --pre`
-   3. Запустіть проєкт з команди `python3 bot.py`
-
+   2. Запустіть проєкт з команди `docker-compose up` -->
 
 ### Як робити та реєструвати хендлери:
 Створюєте модуль `you_name.py` у папці `handlers`.
