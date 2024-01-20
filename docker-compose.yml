@@ -12,6 +12,7 @@ services:
       - node_modules_volume:/home/node/app/node_modules
     command: ["npm", "run", "dev", "--", "--host"]
 
+  # https://ngrok.com/docs/ngrok-agent/config/ For Ngrok Configuration
   ngrok:
     image: ngrok/ngrok:latest
     restart: unless-stopped
@@ -21,30 +22,30 @@ services:
       - ./ngrok.yml:/etc/ngrok.yml
     expose:
       - 443
-      
- #   To enable postgres uncomment the following lines
- #  http://pgconfigurator.cybertec.at/ For Postgres Configuration
-  pg_database:
-    container_name: "pg_database"
-    image: postgres:13-alpine
-    ports:
-      - "5439:5432" # Change if you like! 5439 is external to container
-    restart: always
-    volumes:
-      - pgdata:/var/lib/postgresql/data
-    command: "postgres -c max_connections=150
-             -c shared_buffers=512MB -c effective_cache_size=1536MB
-             -c maintenance_work_mem=128MB -c checkpoint_completion_target=0.9 -c wal_buffers=16MB
-             -c default_statistics_target=100 -c random_page_cost=1.1 -c effective_io_concurrency=200
-             -c work_mem=3495kB -c min_wal_size=1GB -c max_wal_size=4GB -c max_worker_processes=2
-             -c max_parallel_workers_per_gather=1 -c max_parallel_workers=2 -c max_parallel_maintenance_workers=1"
-    env_file:
-      - '.env'
-    logging:
-      driver: "json-file"
-      options:
-        max-size: "200k"
-        max-file: "10"
+
+  # To enable postgres uncomment the following lines
+  # http://pgconfigurator.cybertec.at/ For Postgres Configuration
+  # pg_database:
+  #   container_name: "pg_database"
+  #   image: postgres:13-alpine
+  #   ports:
+  #     - "5439:5432" # Change if you like! 5439 is external to container
+  #   restart: always
+  #   volumes:
+  #     - pgdata:/var/lib/postgresql/data
+  #   command: "postgres -c max_connections=150
+  #            -c shared_buffers=512MB -c effective_cache_size=1536MB
+  #            -c maintenance_work_mem=128MB -c checkpoint_completion_target=0.9 -c wal_buffers=16MB
+  #            -c default_statistics_target=100 -c random_page_cost=1.1 -c effective_io_concurrency=200
+  #            -c work_mem=3495kB -c min_wal_size=1GB -c max_wal_size=4GB -c max_worker_processes=2
+  #            -c max_parallel_workers_per_gather=1 -c max_parallel_workers=2 -c max_parallel_maintenance_workers=1"
+  #   env_file:
+  #     - '.env'
+  #   logging:
+  #     driver: "json-file"
+  #     options:
+  #       max-size: "200k"
+  #       max-file: "10"
 
   api:
     stop_signal: SIGINT
@@ -85,7 +86,8 @@ services:
         max-size: "200k"
         max-file: "10"
         
-  #   To enable redis cache uncomment the following lines
+  # To enable redis cache uncomment the following lines
+  # https://redis.io/docs/management/config/ For Redis configuration
   redis_cache:
    image: redis:6.2-alpine
    restart: always
