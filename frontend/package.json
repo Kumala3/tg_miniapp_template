@@ -1,5 +1,5 @@
 {
-  "name": "tg_miniapp_template",
+  "name": "frontend",
   "private": true,
   "version": "0.0.0",
   "type": "module",
@@ -12,15 +12,19 @@
   "dependencies": {
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "react-router-dom": "^6.19.0",
+    "@vkruglikov/react-telegram-web-app": "^2.1.5",
+    "axios": "^1.6.5",
+    "@tanstack/react-query": "^5.7.2",
     "sass": "^1.69.5"
   },
   "devDependencies": {
     "@types/react": "^18.2.43",
     "@types/react-dom": "^18.2.17",
-    "@typescript-eslint/eslint-plugin": "^6.14.0",
-    "@typescript-eslint/parser": "^6.14.0",
-    "@vitejs/plugin-react": "^4.2.1",
+    "@typescript-eslint/eslint-plugin": "^6.19.0",
+    "@typescript-eslint/parser": "^6.19.0",
     "eslint": "^8.55.0",
+    "eslint-plugin-react": "^7.33.2",
     "eslint-plugin-react-hooks": "^4.6.0",
     "eslint-plugin-react-refresh": "^0.4.5",
     "typescript": "^5.2.2",
