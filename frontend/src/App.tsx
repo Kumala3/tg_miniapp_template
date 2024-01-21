@@ -1,10 +1,17 @@
-import "./App.css";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import "./App.scss";
+import Home from "./pages/Home/Home.tsx";
 
 function App() {
     return (
-        <>
-            <h1>React App</h1>
-        </>
+        <BrowserRouter>
+            <Routes>
+                <Route 
+                    path="/" 
+                    element={<Home />} 
+                />
+            </Routes>
+        </BrowserRouter>
     );
 }
 

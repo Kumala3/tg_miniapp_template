@@ -1,4 +1,9 @@
+@import "./assets/styles/vars.scss";
+
 #root {
+  background-color: $tg-theme-bg;
+  color: $tg-theme-text;
+  scroll-behavior: smooth;
   user-select: none;
   -webkit-user-select: none;
   -moz-user-select: none;
