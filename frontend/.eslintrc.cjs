@@ -18,16 +18,16 @@ module.exports = {
     settings: { react: { version: "18.2" } },
     plugins: ["react-refresh", "@typescript-eslint"],
     rules: {
-        "react-refresh/only-export-components": [
-            "warn",
-            { allowConstantExport: true },
-        ],
+        "react-refresh/only-export-components": "warn",
         "react/prop-types": 0,
         "indent": ["error", 4],
         "linebreak-style": 1,
         "quotes": ["error", "double"],
         "semi": ["error", "always"],
-        "react/jsx-first-prop-new-line": ["error", "multiline"],
-        "react/jsx-max-props-per-line": ["error", { maximum: 1 }],
+        "react/jsx-max-props-per-line": [
+            "error",
+            { maximum: 1, when: "multiline" },
+        ],
+        "@typescript-eslint/no-unsafe-call": "off",
     },
 };
