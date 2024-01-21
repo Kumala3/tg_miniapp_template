@@ -4,3 +4,4 @@ fastapi
 asyncpg
 uvicorn
 environs
+betterlogging

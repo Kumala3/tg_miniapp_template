@@ -88,14 +88,14 @@ services:
         
   # To enable redis cache uncomment the following lines
   # https://redis.io/docs/management/config/ For Redis configuration
-  redis_cache:
-   image: redis:6.2-alpine
-   restart: always
-   command: redis-server --port $REDIS_PORT --save 20 1 --loglevel warning --requirepass $REDIS_PASSWORD
-   env_file:
-     - ".env"
-   volumes:
-     - cache:/data
+  # redis_cache:
+  #  image: redis:6.2-alpine
+  #  restart: always
+  #  command: redis-server --port $REDIS_PORT --save 20 1 --loglevel warning --requirepass $REDIS_PASSWORD
+  #  env_file:
+  #    - ".env"
+  #  volumes:
+  #    - cache:/data
 
   # reverse-proxy:
   #   container_name: nginx-reverse-proxy
