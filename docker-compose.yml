@@ -2,6 +2,7 @@ version: "3.3"
 
 services:
   app:
+    image: "react-app"
     stop_signal: SIGINT
     build:
       context: ./frontend
@@ -48,10 +49,11 @@ services:
   #       max-file: "10"
 
   api:
+    image: "api"
     stop_signal: SIGINT
     build:
-      context: ./backend
-      dockerfile: api.Dockerfile
+      context: ./backend/infrastructure
+      dockerfile: Dockerfile
     working_dir: "/usr/src/app/api"
     volumes:
       - ./backend:/usr/src/app/api
@@ -71,8 +73,8 @@ services:
     image: "bot"
     stop_signal: SIGINT
     build:
-      context: ./backend
-      dockerfile: bot.Dockerfile
+      context: ./backend/tgbot
+      dockerfile: Dockerfile
     working_dir: "/usr/src/app/bot"
     volumes:
       - ./backend:/usr/src/app/bot
